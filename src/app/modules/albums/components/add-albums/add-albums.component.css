@@ -1,0 +1,35 @@
+.form2 {
+  width: 395px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  border-radius: 5px;
+  border-top: 40px solid black;
+  border-bottom: 20px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+.custom-table th[colspan="3"] {
+  width: calc(100% / 3);
+}
+#status {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  border: 1.5px solid #000;
+  border-radius: 3px;
+  height: 40px;
+  outline: none;
+  text-transform: unset;
+  font-size: 16px;
+  transition: border-color 125ms;
+}
+
+@media (max-width: 768px) {
+  .custom-table th[colspan="3"] {
+    width: 100%;
+  }
+}

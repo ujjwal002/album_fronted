@@ -1,0 +1,55 @@
+<div class="search">
+  <div>
+    <h1>Shared Albums</h1>
+    <hr />
+  </div>
+  <div>
+
+  </div>
+  <!-- <div>
+    <button class="button1" (click)="onGo()">
+      <i class="fa fa-plus" aria-hidden="true" style="margin: 4px"></i>Add Albums
+    </button>
+  </div> -->
+</div>
+<div class="search">
+  <table class="custom-table">
+    <thead class="thead_style">
+      <tr class="sepration">
+        <th colspan="1">Id</th>
+        <th colspan="1">Album name</th>
+        <!-- <th colspan="2">Action</th> -->
+        <th colspan="1">Shared By</th>
+        <th colspan="1">Permission</th>
+        <th colspan="1">Take permission</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of album">
+        <td colspan="1">{{ item.id }}</td>
+        <td colspan="1">
+          <ng-container *ngIf="item.permission; else noPermission">
+            <a [routerLink]="['/dashboard/sharedImage', item.album_id]">{{ item.Album.title }}</a>
+          </ng-container>
+          <ng-template #noPermission>
+            <a [routerLink]="['/dashboard/image', item.id]">{{ item.Album.title }}</a>
+          </ng-template>
+        </td>
+
+
+        <td colspan="1">{{ item.User.username }}</td>
+        <td colspan="1">
+          <i class="fa" [ngClass]="{'fa-check': item.permission, 'fa-times': !item.permission}"></i>
+        </td>
+        <td colspan="1">
+          <ng-container *ngIf="!item.permission; else grantedTemplate">
+            <button class="button1" (click)="permission(item)">{{permit}}</button>
+          </ng-container>
+          <ng-template #grantedTemplate>
+            <button class="button1" (click)="permission(item)" disabled style="cursor: not-allowed;">granted</button>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

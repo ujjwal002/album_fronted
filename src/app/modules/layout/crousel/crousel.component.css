@@ -1,0 +1,29 @@
+/* body {
+  height: 500px;
+  width: 500px;
+} */
+.flex {
+  display: flex;
+  justify-content: center;
+}
+.arrow {
+  height: 50px;
+  position: relative;
+  top: 215px;
+  left: 50px;
+  color: black;
+}
+
+.right-arrow {
+  height: 50px;
+  position: relative;
+  top: 215px;
+  right: 50px;
+  color: red;
+}
+.arrow:hover {
+  cursor: pointer;
+}
+.right-arrow:hover {
+  cursor: pointer;
+}

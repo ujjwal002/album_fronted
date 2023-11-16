@@ -1,0 +1,40 @@
+<div class="form2">
+  <form class="sign-in" id="demoForm" [formGroup]="form" (ngSubmit)="onSubmit()" style="padding: 0;">
+
+    <div class="form-control">
+      <label for="title">Title<small style="color: red;"> *</small></label>
+      <input formControlName="title" chars-nos type="email" id="title   " />
+      <span *ngIf="form.get('title')?.invalid && submitted">
+        <span *ngIf="form.get('title')?.errors?.['required']">
+          <span class="red">Title is required</span>
+        </span>
+
+      </span>
+
+    </div>
+    <div class="form-control">
+      <p>
+        <label for="status">Status<small style="color: red;"> *</small></label>
+        <br>
+        <select formControlName="status" id="status">
+          <option value="">--Please choose an option--</option>
+          <option value="public">Public</option>
+          <option value="private">Private</option>
+        </select>
+        <span *ngIf="form.get('status')?.invalid && submitted">
+          <span *ngIf="form.get('status')?.errors?.['required']">
+            <span class="red">The status field is required.</span>
+          </span>
+        </span>
+      </p>
+    </div>
+    <div class="button-div">
+      <!-- <button type="submit" class="button" [disabled]="!form.valid">Add Albums</button> -->
+      <button class="btn btn-block login-btn" [disabled]="!form.valid" type="submit"
+        style="width: 100%; cursor: pointer;">Add
+        Album</button>
+
+    </div>
+
+  </form>
+</div>

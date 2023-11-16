@@ -1,0 +1,50 @@
+<div class="search">
+  <div>
+    <h1> Edit Album</h1>
+    <hr>
+  </div>
+  <!-- <div><button class="button1"><i class="fa fa-plus" aria-hidden="true" style="margin: 4px;"></i>Add Albums</button>
+  </div> -->
+</div>
+<div class="centr">
+  <div class="form1">
+    <form class="sign-in" id="demoForm" [formGroup]="form" (ngSubmit)="onSubmit()" style="padding: 0;">
+      <div class="text-center">
+      </div>
+      <div class="form-control">
+        <label for="title">Title<small style="color: red;"> *</small></label>
+        <input formControlName="title" chars-nos type="email" id="title   " />
+        <span *ngIf="form.get('title')?.invalid && submitted">
+          <span *ngIf="form.get('title')?.errors?.['required']">
+            <span class="red">Title is required</span>
+          </span>
+
+        </span>
+
+      </div>
+      <div class="form-control" style="margin-top: 20px;">
+        <p>
+          <label for="status">Status<small style="color: red;"> *</small></label>
+          <br>
+          <select formControlName="status" id="status">
+            <option value="">--Please choose an option--</option>
+            <option value="public">Public</option>
+            <option value="private">Private</option>
+          </select>
+          <span *ngIf="form.get('status')?.invalid && submitted">
+            <span *ngIf="form.get('status')?.errors?.['required']">
+              <span class="red">The status field is required.</span>
+            </span>
+          </span>
+        </p>
+      </div>
+
+
+      <div class="button-div">
+        <button type="submit" class="login-btn" style="width: 100%;" [disabled]="!form.valid">Edit Album</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="right_side_content" style="width: 500px; height: 500px;">
+  <div class="list-content">
+    <div class="flex">
+      <div (click)="leftClick()" class="arrow" [style.display]="leftDiv ? 'none' : 'block'">
+        <span><i class="fa fa-arrow-circle-left" style="font-size:24px;color:black"></i></span>
+      </div>
+
+      <img src="http://localhost:3000/uploads/{{ image_data }}" alt="image"
+        style="width: 500px; height: 500px; overflow: hidden; margin: 0; padding: 0;">
+      <div (click)="rightClick()" class="right-arrow" [style.display]="rightDiv ? 'none' : 'block'">
+        <span>
+          <i class="fa fa-arrow-circle-right" style="font-size:24px;color:black"></i>
+        </span>
+      </div>
+    </div>
+  </div>

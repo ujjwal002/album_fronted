@@ -1,0 +1,32 @@
+<div class="search">
+  <div>
+    <h1>Permissions</h1>
+    <hr />
+  </div>
+  <div></div>
+</div>
+<div class="search">
+  <table class="custom-table">
+    <thead class="thead_style">
+      <tr class="sepration">
+        <th colspan="1">Id</th>
+        <th colspan="1">Album name</th>
+        <th colspan="1">User Name</th>
+        <th colspan="1">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td colspan="1">{{ item.id }}</td>
+        <td colspan="1">
+          {{ item.Album.title }}
+        </td>
+        <td colspan="1">{{ item.User.username }}</td>
+        <td colspan="1">
+          <i class="fa fa-check" style="color: green" (click)="grant(item.album_shared_with.id,item.id)"></i>
+          <i class="fa fa-times" style="margin-left: 5px; color: red" (click)="deletePer(item.id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

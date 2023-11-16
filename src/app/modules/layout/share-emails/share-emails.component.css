@@ -1,0 +1,14 @@
+#myDiv {
+  margin: 20px;
+}
+h4 {
+  background-color: whitesmoke;
+  color: white;
+  padding: 10px;
+  justify-content: center;
+  text-align: center;
+}
+.login-btn[disabled] {
+  background-color: #5c5a5a;
+  cursor: not-allowed;
+}

@@ -1,0 +1,55 @@
+<div class="search">
+  <div>
+    <h1>My Albums</h1>
+    <hr />
+  </div>
+  <div>
+    <input type="text" name="" id="" placeholder="Search the album" (input)="onInputChange($event)" />
+  </div>
+  <div>
+    <button class="button1" mat-raised-button (click)="openDialog()" style="background-color: black; color: white;">
+      <i class="fa fa-plus" aria-hidden="true" style="margin: 4px"></i>Add
+      Album
+    </button>
+  </div>
+</div>
+<div class="search">
+  <table class="custom-table">
+    <thead class="thead_style">
+      <tr class="sepration">
+        <th colspan="2">Id</th>
+        <th colspan="2">Album name</th>
+        <th colspan="2">Action</th>
+        <th colspan="2">Share</th>
+      </tr>
+    </thead>
+    <tbody class="tbody_style">
+      <tr *ngFor="let item of dataa let even = even; let odd = odd;" class="row_change">
+        <td colspan="2" (click)="carousel(item.id)">{{ item.id }}</td>
+        <td colspan="2" (click)="carousel(item.id)">
+          <a class="title">{{ item.title }}</a>
+        </td>
+        <td colspan="2">
+          <i class="fa fa-edit" aria-hidden="true" (click)="onEdit(item.id)" style="font-size: 15px;"></i>
+          <i class="fa fa-trash" aria-hidden="true"
+            style="padding: 5px; color: red; margin-left: 10px; font-size: 15px;" (click)="onDelete(item.id)"></i>
+          <i class="fa fa-cog" aria-hidden="true" (click)="onImage(item.id)"
+            style="padding: 5px; margin-left: 10px; font-size: 15px;"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true" (click)="onImage(item.id)"
+            style="padding: 5px; margin-left: 10px; font-size: 15px;"></i>
+        </td>
+        <td colspan="2"><i class="fa fa-share" style="color: green;" mat-raised-button
+            (click)="toggleVisibility(item.id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+
+</div>
+<div class="pagination">
+  <div class="sub_pagination active" *ngFor="let item of length_page" (click)="pagination_fun(item)"
+    [class.active]="currentPage === item">
+    {{item}}
+  </div>
+</div>

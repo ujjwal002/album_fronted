@@ -1,0 +1,23 @@
+<div class="search">
+  <div>
+    <h2>Images</h2>
+
+    <hr />
+  </div>
+  <!-- <div><input type="text" name="" id="" placeholder="Search the album"></div> -->
+
+</div>
+<div style=" height: 65vh; overflow-y: scroll;">
+  <div class="search1" *ngFor="let item of photo" style="margin: 20px; ">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <p>{{item.Album.title}}</p>
+        <br>
+        <p>{{item.owner_name}}</p>
+      </mat-card-header>
+      <img mat-card-image src="http://localhost:3000/uploads/{{ item.image }}" alt="Photo of a Shiba Inu"
+        style="margin: 10px; width: 170px; height: 200px;">
+
+    </mat-card>
+  </div>
+</div>
